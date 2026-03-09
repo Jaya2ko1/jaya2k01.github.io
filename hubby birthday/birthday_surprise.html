@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Surprise ❤️</title>
+
+<style>
+body{
+    text-align:center;
+    font-family:Arial;
+    background:#ffe6f0;
+    padding-top:100px;
+}
+
+button{
+    padding:15px 25px;
+    font-size:18px;
+    margin:10px;
+    cursor:pointer;
+}
+
+#no{
+    position:absolute;
+}
+
+#surprise{
+    display:none;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Do you love me? ❤️</h1>
+
+<button onclick="showSurprise()">Yes</button>
+<button id="no" onmouseover="moveButton()">No</button>
+
+<p id="message"></p>
+
+<div id="surprise">
+<h2>Happy Birthday My Love 🎂</h2>
+
+<video width="300" controls>
+<source src="birthday_video.mp4" type="video/mp4">
+</video>
+
+<p>
+Even though you are far away in Dubai,  
+your baby and I love you so much.  
+Happy Birthday to the best husband and best father ❤️
+</p>
+</div>
+
+<script>
+
+var messages=[
+"Please don't touch me like that 😜",
+"I know you love her!",
+"Wrong answer!",
+"Try again!",
+"You must press YES ❤️"
+]
+
+function moveButton(){
+
+var button=document.getElementById("no")
+
+var x=Math.random()*window.innerWidth
+var y=Math.random()*window.innerHeight
+
+button.style.left=x+"px"
+button.style.top=y+"px"
+
+document.getElementById("message").innerText=
+messages[Math.floor(Math.random()*messages.length)]
+}
+
+function showSurprise(){
+document.getElementById("surprise").style.display="block"
+}
+
+</script>
+
+</body>
+</html>
